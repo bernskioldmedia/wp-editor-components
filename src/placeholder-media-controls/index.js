@@ -1,7 +1,7 @@
 import { Button, Placeholder } from '@wordpress/components';
 import { MediaUploadCheck, MediaUpload } from '@wordpress/block-editor';
 import { __ } from '@wordpress/i18n';
-import Figure from '../figure/figure';
+import { Figure } from '../figure';
 
 export function PlaceholderMediaControls( props ) {
 	const {

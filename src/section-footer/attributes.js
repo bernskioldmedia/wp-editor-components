@@ -1,4 +1,4 @@
-export default {
+export const sectionFooterAttributes = {
 	sectionFooterShow: {
 		type: 'boolean',
 		default: false,

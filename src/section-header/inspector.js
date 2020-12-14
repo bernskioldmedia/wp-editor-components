@@ -20,7 +20,7 @@ const DEFAULT_HEADER_STYLES = [
 	},
 ];
 
-export default function SectionHeaderInspector( props ) {
+export function SectionHeaderInspector( props ) {
 	const { attributes, setAttributes } = props;
 
 	const {

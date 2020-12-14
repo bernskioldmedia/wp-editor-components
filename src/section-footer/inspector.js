@@ -20,7 +20,7 @@ const DEFAULT_ALIGNMENT_OPTIONS = [
 	},
 ];
 
-export default function SectionFooterInspector( props ) {
+export function SectionFooterInspector( props ) {
 	const { attributes, setAttributes } = props;
 	const {
 		sectionFooterShow,

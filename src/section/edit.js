@@ -2,16 +2,16 @@
  * External Dependencies
  */
 import classnames from 'classnames';
-import { focalPointToBgPos, } from '../utilities';
 /**
  * Internal Dependencies
  */
+import { focalPointToBgPos } from '../utilities';
 /**
  * WordPress Dependencies
  */
 import { useBlockProps } from '@wordpress/block-editor';
 
-function SectionEdit( props ) {
+export function SectionEdit( props ) {
 	const {
 		attributes,
 		className,
@@ -75,5 +75,3 @@ function SectionEdit( props ) {
 		</>
 	);
 }
-
-export default SectionEdit;

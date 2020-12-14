@@ -11,7 +11,7 @@ import { Dropdown, Button, RadioControl, TextControl, Toolbar, } from '@wordpres
 import { getDefaultFontAwesomeFamilies } from '../settings';
 import icon from './icon';
 
-export default function ToolbarIconPicker( props ) {
+export function ToolbarIconPicker( props ) {
 	const { selectedIcon, selectedFamily, setIcon, setFamily } = props;
 
 	const fontAwesomeFamilyOptions = getDefaultFontAwesomeFamilies( props );

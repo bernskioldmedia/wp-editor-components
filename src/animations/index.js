@@ -1,7 +1,7 @@
 import { createHigherOrderComponent } from '@wordpress/compose';
-import AnimationInspector from './animation-inspector';
+import { AnimationInspector } from './animation-inspector';
 
-export * as AnimationInspector from './animation-inspector';
+export * from './animation-inspector';
 
 export const animationAttributes = {
 	animationEnabled: {

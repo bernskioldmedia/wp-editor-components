@@ -1,4 +1,4 @@
-export * as SectionAttributes from './attributes';
-export * as SectionInspector from './inspector';
-export * as SectionSave from './save';
-export * as SectionEdit from './edit';
+export * from './attributes';
+export * from './inspector';
+export * from './save';
+export * from './edit';

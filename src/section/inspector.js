@@ -22,7 +22,7 @@ const ALLOWED_MEDIA_TYPES = [ 'image', 'video' ];
  *
  * @param props
  */
-function SectionAppearance( props ) {
+export function SectionAppearance( props ) {
 	const { attributes, setAttributes } = props;
 	const {
 		backgroundImageId,
@@ -263,5 +263,3 @@ function SectionAppearance( props ) {
 		</>
 	);
 }
-
-export default SectionAppearance;

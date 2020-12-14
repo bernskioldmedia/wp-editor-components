@@ -6,7 +6,7 @@ import {
 } from '@wordpress/block-editor';
 import { __ } from '@wordpress/i18n';
 
-export default function ToolbarMediaControls( props ) {
+export function ToolbarMediaControls( props ) {
 	const {
 		allowedTypes = [ 'image' ],
 		removeMedia,

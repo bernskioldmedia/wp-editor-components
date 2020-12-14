@@ -2,19 +2,12 @@
  * WordPress Dependencies
  */
 import { createHigherOrderComponent } from '@wordpress/compose';
+import { SectionAppearance, SectionEdit, SectionSave } from '../section';
+import { SectionFooterEdit, SectionFooterInspector, SectionFooterSave } from '../section-footer';
+import { SectionHeaderEdit, SectionHeaderInspector, SectionHeaderSave } from '../section-header';
 /**
  * Internal Dependencies
  */
-import SectionEdit from '../section/edit';
-import SectionHeaderEdit from '../section-header/edit';
-import SectionFooterEdit from '../section-footer/edit';
-import SectionHeaderSave from '../section-header/save';
-import SectionFooterSave from '../section-footer/save';
-import SectionSave from '../section/save';
-import { InspectorControls } from '@wordpress/block-editor';
-import SectionAppearance from '../section/inspector';
-import SectionHeaderInspector from '../section-header/inspector';
-import SectionFooterInspector from '../section-footer/inspector';
 
 /**
  * Override the default block to wrap it in our bespoke Section

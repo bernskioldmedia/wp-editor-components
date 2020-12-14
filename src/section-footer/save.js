@@ -7,7 +7,7 @@ import classnames from 'classnames';
  */
 import { RichText } from '@wordpress/block-editor';
 
-export default function SectionFooterSave( { attributes } ) {
+export function SectionFooterSave( { attributes } ) {
 	const {
 		sectionFooterShow,
 		sectionFooterAlignment,

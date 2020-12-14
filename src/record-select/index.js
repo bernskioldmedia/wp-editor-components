@@ -9,23 +9,6 @@ import Select from 'react-select';
  */
 import { withSelect } from '@wordpress/data';
 
-/**
- * Helper component to display a list of
- * records that the user can select from.
- *
- * Retrieves records from the WP REST API
- * and displays them using a searchable
- * react-select dropdown list.
- *
- * @param root0
- * @param root0.onChange
- * @param root0.value
- * @param root0.multiple
- * @param root0.placeholder
- * @param root0.isRequesting
- * @param root0.type
- * @param root0.records
- */
 function RecordSelector( {
 	onChange,
 	value,

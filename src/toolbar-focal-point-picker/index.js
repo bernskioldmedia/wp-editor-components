@@ -11,7 +11,7 @@ import {
 import {__} from '@wordpress/i18n';
 import {BlockControls} from '@wordpress/block-editor';
 
-export default function ToolbarFocalPointPicker( props ) {
+export function ToolbarFocalPointPicker( props ) {
 	const { mediaUrl, mediaDimensions, focalPoint, setFocalPoint } = props;
 
 	if ( !mediaUrl ) {

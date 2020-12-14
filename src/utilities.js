@@ -1,9 +1,10 @@
 /**
  * Internal Dependencies
  */
-import sectionFooterAttributes from './section-footer/attributes';
-import sectionHeaderAttributes from './section-header/attributes';
-import sectionAttributes from './section/attributes';
+import { sectionAttributes } from './section';
+import { sectionFooterAttributes } from './section-footer';
+import { sectionHeaderAttributes } from './section-header';
+
 /**
  * WordPress Dependencies
  */

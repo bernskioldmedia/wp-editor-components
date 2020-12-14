@@ -7,7 +7,7 @@ import classnames from 'classnames';
  */
 import { RichText } from '@wordpress/block-editor';
 
-export default function SectionHeaderSave( { attributes } ) {
+export function SectionHeaderSave( { attributes } ) {
 	const {
 		sectionHeaderStyle,
 		sectionHeaderShow,

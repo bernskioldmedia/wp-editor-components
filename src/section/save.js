@@ -12,7 +12,7 @@ import { focalPointToBgPos, } from '../utilities';
  */
 import { useBlockProps } from '@wordpress/block-editor';
 
-export default function SectionSave( { attributes, children } ) {
+export function SectionSave( { attributes, children } ) {
 	const {
 		backgroundImageUrl,
 		backgroundImageFocalPoint,

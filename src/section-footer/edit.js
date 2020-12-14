@@ -11,9 +11,9 @@ import { __ } from '@wordpress/i18n';
 /**
  * Internal Dependencies
  */
-import { PopoverURLPicker } from '../url-picker/url-picker';
+import { PopoverURLPicker } from '../url-picker';
 
-export default function SectionFooterEdit( props ) {
+export function SectionFooterEdit( props ) {
 	const { attributes, setAttributes, isSelected } = props;
 
 	const {

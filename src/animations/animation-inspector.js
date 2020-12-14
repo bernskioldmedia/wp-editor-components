@@ -67,7 +67,7 @@ const ANIMATION_TYPES = [
 	},
 ];
 
-export default function AnimationInspector( props ) {
+export function AnimationInspector( props ) {
 	const { attributes, setAttributes } = props;
 	const {
 		animationEnabled,

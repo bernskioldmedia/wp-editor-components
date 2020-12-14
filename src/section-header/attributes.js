@@ -7,7 +7,7 @@
  * !!!!!
  * N.B. Don't forget to update these in Components/Section/class-Section.php too!
  */
-export default {
+export const sectionHeaderAttributes = {
 	sectionHeaderShow: {
 		type: 'boolean',
 		default: false,

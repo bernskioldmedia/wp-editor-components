@@ -12,9 +12,9 @@ import { applyFilters } from '@wordpress/hooks';
 /**
  * Internal Dependencies
  */
-import { PopoverURLPicker } from '../url-picker/url-picker';
+import { PopoverURLPicker } from '../url-picker';
 
-export default function SectionHeaderEdit( props ) {
+export function SectionHeaderEdit( props ) {
 	const { attributes, setAttributes, isSelected } = props;
 
 	const {

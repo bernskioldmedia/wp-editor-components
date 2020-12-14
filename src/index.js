@@ -1,20 +1,18 @@
-import ToolbarFocalPointPicker from './toolbar-focal-point-picker';
-import ToolbarIconPicker from './toolbar-icon-picker';
-import ToolbarMediaControls from './toolbar-media-controls';
+import RecordSelector from './record-select';
 
 export * from './animations';
 export * from './carousel';
 export * from './figure';
-export * as PlaceholderMediaControls from './placeholder-media-controls';
-export * as RecordSelector from './record-select';
+export * from './placeholder-media-controls';
 export * from './section';
 export * from './section-footer';
 export * from './section-header';
-export * as ToolbarFocalPointPicker from './toolbar-focal-point-picker';
-export * as ToolbarIconPicker from './toolbar-icon-picker';
-export * as ToolbarMediaControls from './toolbar-media-controls';
-export * as URLPicker from './url-picker';
-export * as WithSection from './with-section';
+export * from './toolbar-focal-point-picker';
+export * from './toolbar-icon-picker';
+export * from './toolbar-media-controls';
+export * from './url-picker';
+export * from './with-section';
 export * from './settings';
 export * from './icons';
 export * from './utilities';
+export * as RecordSelector from './record-select';
