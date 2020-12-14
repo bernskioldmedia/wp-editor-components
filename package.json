@@ -2,7 +2,6 @@
   "name": "@bernskioldmedia/wp-editor-components",
   "version": "1.0.11",
   "main": "build/main.js",
-  "module": "src/index.js",
   "description": "Reusable block editor components for WordPress development.",
   "scripts": {
     "build": "webpack",
