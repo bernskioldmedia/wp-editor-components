@@ -1,10 +1,9 @@
 /**
  * Internal Dependencies
  */
-import animationsAttributes from './Animations/attributes';
-import sectionFooterAttributes from './Section_Footer/attributes';
-import sectionHeaderAttributes from './Section_Header/attributes';
-import sectionAttributes from './Section/attributes';
+import sectionFooterAttributes from './section-footer/attributes';
+import sectionHeaderAttributes from './section-header/attributes';
+import sectionAttributes from './section/attributes';
 /**
  * WordPress Dependencies
  */
