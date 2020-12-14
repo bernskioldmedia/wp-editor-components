@@ -4,16 +4,6 @@
 import { __ } from '@wordpress/i18n';
 import { PanelBody, ToggleControl, SelectControl } from '@wordpress/components';
 
-/**
- * Carousel Inspector Panel
- *
- * @param attributes.attributes
- * @param attributes
- * @param setAttributes
- * @param attributes.setAttributes
- * @return {*}
- * @class
- */
 export function CarouselInspectorPanel( {
 	attributes,
 	setAttributes,

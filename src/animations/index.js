@@ -1,9 +1,9 @@
 import { createHigherOrderComponent } from '@wordpress/compose';
 import AnimationInspector from './animation-inspector';
 
-export * from './animation-inspector';
+export * as AnimationInspector from './animation-inspector';
 
-const animationAttributes = {
+export const animationAttributes = {
 	animationEnabled: {
 		type: 'bool',
 		default: false,
@@ -21,8 +21,6 @@ const animationAttributes = {
 		default: 0,
 	},
 };
-
-export default animationAttributes;
 
 export function addAnimationAttributes( attributes ) {
 	return {
