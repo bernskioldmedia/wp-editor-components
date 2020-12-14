@@ -11,3 +11,7 @@ export * from './toolbar-icon-picker';
 export * from './toolbar-media-controls';
 export * from './url-picker';
 export * from './with-section';
+export * from './settings';
+export * from './icons';
+export * from './settings';
+export * from './utilities';

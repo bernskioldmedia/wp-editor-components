@@ -5,16 +5,16 @@ import { createHigherOrderComponent } from '@wordpress/compose';
 /**
  * Internal Dependencies
  */
-import SectionEdit from '../Section/edit';
-import SectionHeaderEdit from '../Section_Header/edit';
-import SectionFooterEdit from '../Section_Footer/edit';
-import SectionHeaderSave from '../Section_Header/save';
-import SectionFooterSave from '../Section_Footer/save';
-import SectionSave from '../Section/save';
+import SectionEdit from '../section/edit';
+import SectionHeaderEdit from '../section-header/edit';
+import SectionFooterEdit from '../section-footer/edit';
+import SectionHeaderSave from '../section-header/save';
+import SectionFooterSave from '../section-footer/save';
+import SectionSave from '../section/save';
 import { InspectorControls } from '@wordpress/block-editor';
-import SectionAppearance from '../Section/inspector';
-import SectionHeaderInspector from '../Section_Header/inspector';
-import SectionFooterInspector from '../Section_Footer/inspector';
+import SectionAppearance from '../section/inspector';
+import SectionHeaderInspector from '../section-header/inspector';
+import SectionFooterInspector from '../section-footer/inspector';
 
 /**
  * Override the default block to wrap it in our bespoke Section
