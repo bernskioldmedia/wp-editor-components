@@ -1,9 +1,10 @@
 {
   "name": "@bernskioldmedia/wp-editor-components",
   "version": "1.0.10",
-  "main": "src/index.js",
+  "main": "build/index.js",
   "description": "Reusable block editor components for WordPress development.",
   "scripts": {
+    "build": "webpack",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
@@ -40,5 +41,13 @@
     "@wordpress/i18n": "^3.16.0",
     "react-select": "^3.1.1",
     "classnames": "^2.2"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.12.10",
+    "@babel/preset-env": "^7.12.10",
+    "@babel/preset-react": "^7.12.10",
+    "babel-loader": "^8.2.2",
+    "webpack": "^5.10.1",
+    "webpack-cli": "^4.2.0"
   }
 }
