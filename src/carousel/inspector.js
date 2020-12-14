@@ -14,7 +14,7 @@ import { PanelBody, ToggleControl, SelectControl } from '@wordpress/components';
  * @return {*}
  * @class
  */
-export default function CarouselInspectorPanel( {
+export function CarouselInspectorPanel( {
 	attributes,
 	setAttributes,
 } ) {

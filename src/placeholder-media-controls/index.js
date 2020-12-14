@@ -3,7 +3,7 @@ import { MediaUploadCheck, MediaUpload } from '@wordpress/block-editor';
 import { __ } from '@wordpress/i18n';
 import Figure from '../figure/figure';
 
-export default function PlaceholderMediaControls( props ) {
+export function PlaceholderMediaControls( props ) {
 	const {
 		icon,
 		label,

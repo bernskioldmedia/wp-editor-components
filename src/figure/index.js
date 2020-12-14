@@ -7,7 +7,7 @@ import classnames from 'classnames';
  */
 import { focalPointToBgPos } from '../utilities';
 
-export default function Figure( props ) {
+export function Figure( props ) {
 	const {
 		type,
 		url,
