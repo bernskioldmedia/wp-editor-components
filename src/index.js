@@ -1,5 +1,3 @@
-import RecordSelector from './record-select';
-
 export * from './animations';
 export * from './carousel';
 export * from './figure';
@@ -15,4 +13,4 @@ export * from './with-section';
 export * from './settings';
 export * from './icons';
 export * from './utilities';
-export * as RecordSelector from './record-select';
+export * from './record-select';

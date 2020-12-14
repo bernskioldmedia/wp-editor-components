@@ -7,17 +7,31 @@ import Select from 'react-select';
 /**
  * WordPress Dependencies
  */
-import { withSelect } from '@wordpress/data';
+import { useSelect } from '@wordpress/data';
 
-function RecordSelector( {
+export function RecordSelector( {
 	onChange,
 	value,
 	multiple,
 	placeholder,
-	isRequesting,
-	type,
-	records,
+    type = 'postType',
+    objectType = 'post'
 } ) {
+
+    const { isResolving, records } = useSelect( ( select ) => {
+        const { getEntityRecords } = select('core');
+        const { isResolving } = select('core/data');
+        const query = {
+            per_page: -1,
+        };
+        const _records = getEntityRecords( type, objectType, query );
+
+        return {
+            isResolving: isResolving('core', 'getEntityRecords', [ type, objectType, query ]),
+            records: _records,
+        };
+    } );
+    
 	/**
 	 * Map the API records to an objects array
 	 * that react-select will take.
@@ -29,12 +43,12 @@ function RecordSelector( {
 	const getOptions = () => {
 		const options = [];
 
-		if ( ! isRequesting ) {
+		if ( ! isResolving ) {
 			/**
 			 * Map CPT type records.
 			 */
 			if ( 'postType' === type ) {
-				records.map( ( record ) => {
+				records && records.map( ( record ) => {
 					const option = {
 						label: record.title.rendered,
 						value: record.id,
@@ -46,7 +60,7 @@ function RecordSelector( {
 				 * Map Taxonomy Type Records
 				 */
 
-				records.map( ( record ) => {
+				records && records.map( ( record ) => {
 					const option = {
 						label: record.name,
 						value: record.id,
@@ -65,43 +79,9 @@ function RecordSelector( {
 			onChange={ onChange }
 			className="record-selector-control"
 			value={ value }
-			isDisabled={ isRequesting }
+			isDisabled={ isResolving }
 			isMulti={ multiple }
 			placeholder={ placeholder }
 		/>
 	);
 }
-
-/**
- * Make available a list of all records
- * for the component props.
- */
-export default withSelect( ( select, props ) => {
-	const { getEntityRecords } = select( 'core' );
-	const { isResolving } = select( 'core/data' );
-
-	/**
-	 * Determine what type of records we are fetching,
-	 * with a fallback to fetching posts.
-	 */
-	const entityType = props.type ? props.type : 'postType';
-	const objectType = props.objectType ? props.objectType : 'post';
-
-	/**
-	 * Ensure that we get all posts.
-	 *
-	 * @type {{per_page: number}}
-	 */
-	const query = {
-		per_page: -1,
-	};
-
-	return {
-		records: getEntityRecords( entityType, objectType, query ),
-		isRequesting: isResolving( 'core', 'getEntityRecords', [
-			entityType,
-			objectType,
-			query,
-		] ),
-	};
-} )( RecordSelector );
