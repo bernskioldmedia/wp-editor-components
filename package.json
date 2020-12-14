@@ -4,7 +4,8 @@
   "main": "src/index.js",
   "description": "Reusable block editor components for WordPress development.",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "publish": "npm publish"
   },
   "keywords": [
     "wordpress",
