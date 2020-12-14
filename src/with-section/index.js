@@ -1,13 +1,9 @@
-/**
- * WordPress Dependencies
- */
+import { InspectorControls } from '@wordpress/block-editor';
 import { createHigherOrderComponent } from '@wordpress/compose';
 import { SectionAppearance, SectionEdit, SectionSave } from '../section';
 import { SectionFooterEdit, SectionFooterInspector, SectionFooterSave } from '../section-footer';
 import { SectionHeaderEdit, SectionHeaderInspector, SectionHeaderSave } from '../section-header';
-/**
- * Internal Dependencies
- */
+
 
 /**
  * Override the default block to wrap it in our bespoke Section
