@@ -1,31 +1,25 @@
 const path = require("path")
 
 module.exports = {
-    mode: 'production',
     entry: path.resolve(__dirname, "src/index.js"),
     output: {
         path: path.resolve(__dirname, "build"),
-        library: 'wp-editor-components',
-        libraryTarget: "commonjs-module",
-    },
-    optimization: {
-        concatenateModules: true,
-        runtimeChunk: true
+        filename: 'main.js'
     },
     externals: {
 		lodash: 'lodash',
 		jquery: 'jquery',
 		react: 'react',
 		'react-dom': 'react-dom',
-		'@wordpress/api-fetch': '@wordpress/api-fetch',
-		'@wordpress/block-editor': '@wordpress/block-editor',
-		'@wordpress/blocks': '@wordpress/blocks',
-		'@wordpress/components': '@wordpress/components',
-		'@wordpress/compose': '@wordpress/compose',
-		'@wordpress/data': '@wordpress/data',
-		'@wordpress/element': '@wordpress/element',
-		'@wordpress/hooks': '@wordpress/hooks',
-		'@wordpress/i18n': '@wordpress/i18n',
+		'@wordpress/api-fetch': [ 'wp', 'apiFetch' ],
+		'@wordpress/block-editor': [ 'wp', 'blockEditor' ],
+		'@wordpress/blocks': [ 'wp', 'blocks' ],
+		'@wordpress/components': [ 'wp', 'components' ],
+		'@wordpress/compose': [ 'wp', 'compose' ],
+		'@wordpress/data': [ 'wp', 'data' ],
+		'@wordpress/element': [ 'wp', 'element' ],
+		'@wordpress/hooks': [ 'wp', 'hooks' ],
+		'@wordpress/i18n': [ 'wp', 'i18n' ],
 	},
     module: {
         rules: [
