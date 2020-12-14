@@ -5,8 +5,8 @@ module.exports = {
     entry: path.resolve(__dirname, "src/index.js"),
     output: {
         path: path.resolve(__dirname, "build"),
-        library: ['bernskioldmedia', 'wp-editor-components'],
-        libraryTarget: "window",
+        library: 'wp-editor-components',
+        libraryTarget: "commonjs-module",
     },
     optimization: {
         concatenateModules: true,
