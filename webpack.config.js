@@ -1,10 +1,12 @@
 const path = require("path")
 
 module.exports = {
+    mode: 'production',
     entry: path.resolve(__dirname, "src/index.js"),
     output: {
         path: path.resolve(__dirname, "build"),
-        filename: 'main.js'
+        filename: 'main.js',
+        libraryTarget: 'commonjs2'
     },
     externals: {
 		lodash: 'lodash',
