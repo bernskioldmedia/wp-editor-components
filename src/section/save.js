@@ -45,6 +45,10 @@ export function SectionSave( { attributes, children } ) {
     			backgroundImageFocalPoint
     		);
     	}
+    } else {
+        propsArgs.className = classnames({
+            'has-carousel': true === displayAsCarousel,
+        });
     }
 
 	const blockProps = useBlockProps.save( propsArgs );

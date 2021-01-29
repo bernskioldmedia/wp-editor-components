@@ -64,6 +64,10 @@ export function SectionEdit( props ) {
     		[`has-${ sectionVerticalSpacing }-vspacing`]: sectionVerticalSpacing,
         } );
         
+    } else {
+        propsArgs.className = classnames({
+            'has-carousel': true === displayAsCarousel,
+        });
     }
 
 	const blockProps = useBlockProps( propsArgs );
