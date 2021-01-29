@@ -9,7 +9,7 @@ import linkIcon from './icon';
 import { __ } from '@wordpress/i18n';
 import { displayShortcut, rawShortcut } from '@wordpress/keycodes';
 import { __experimentalLinkControl as LinkControl, BlockControls, } from '@wordpress/block-editor';
-import { KeyboardShortcuts, Popover, ToolbarButton, ToolbarGroup, } from '@wordpress/components';
+import { Popover, ToolbarButton, ToolbarGroup } from '@wordpress/components';
 import { useCallback, useState } from '@wordpress/element';
 
 const NEW_TAB_REL = 'noreferrer noopener';
@@ -65,8 +65,8 @@ export function PopoverURLPicker( props ) {
 						<p style={ {
 							margin: 0,
 							padding: '0.75rem 1rem',
-							'font-weight': 'bold',
-							'border-bottom': '1px solid #ccc',
+							fontWeight: 'bold',
+							borderBottom: '1px solid #ccc',
 						} }>{ label }</p>
 					) }
 					<URLPicker isOpen={ shouldShow } { ...props } />
@@ -78,7 +78,7 @@ export function PopoverURLPicker( props ) {
 }
 
 export function ToolbarURLPicker( props ) {
-	const { isSelected } = props;
+	const { isSelected, label, toolbarLabel = __( 'Link' ), icon = linkIcon } = props;
 
 	const [ isURLPickerOpen, setIsURLPickerOpen ] = useState( false );
 
@@ -92,34 +92,32 @@ export function ToolbarURLPicker( props ) {
 	return (
 		<>
 			<BlockControls>
-				<ToolbarGroup>
+                <ToolbarGroup>
 					<ToolbarButton
-						name="link"
-						icon={ linkIcon }
-						title={ __( 'Link' ) }
+						icon={ icon }
+                        label={ toolbarLabel }
 						shortcut={ displayShortcut.primary( 'k' ) }
-						onClick={ openLinkControl }
-					/>
+                        onClick={ openLinkControl }
+                        iconPosition="left"
+                    />
+                    { isURLPickerOpen && (
+        				<Popover
+        					position="bottom center"
+        					onClose={ () => setIsURLPickerOpen( false ) }
+                        >
+                            { label && (
+        						<p style={ {
+        							margin: 0,
+        							padding: '0.75rem 1rem',
+        							fontWeight: 'bold',
+        							borderBottom: '1px solid #ccc',
+        						} }>{ label }</p>
+        					) }
+        					<URLPicker isOpen={ isURLPickerOpen } { ...props } />
+        				</Popover>
+        			) }
 				</ToolbarGroup>
 			</BlockControls>
-
-			{ isSelected && (
-				<KeyboardShortcuts
-					bindGlobal
-					shortcuts={ {
-						[rawShortcut.primary( 'k' )]: openLinkControl,
-					} }
-				/>
-			) }
-
-			{ isURLPickerOpen && (
-				<Popover
-					position="bottom center"
-					onClose={ () => setIsURLPickerOpen( false ) }
-				>
-					<URLPicker isOpen={ isURLPickerOpen } { ...props } />
-				</Popover>
-			) }
 		</>
 	);
 }

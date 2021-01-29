@@ -11,7 +11,7 @@ import { __ } from '@wordpress/i18n';
 /**
  * Internal Dependencies
  */
-import { PopoverURLPicker } from '../url-picker';
+import { ToolbarURLPicker } from '../url-picker';
 
 export function SectionFooterEdit( props ) {
 	const { attributes, setAttributes, isSelected } = props;
@@ -75,10 +75,9 @@ export function SectionFooterEdit( props ) {
 					) }
 				</div>
 			</footer>
-			<PopoverURLPicker
-				shouldShow={ isSelected && sectionFooterCtaShow }
-				label={ __( 'Section Footer Call to Action Link', 'bm-block-library' ) }
-				position="bottom center"
+			<ToolbarURLPicker
+                label={ __( 'Section Footer Call to Action Link' ) }
+                toolbarLabel={ __( 'Section Footer CTA' ) }
 				opensInNewTab={
 					sectionFooterCtaLinkTarget === '_blank'
 				}

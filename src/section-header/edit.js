@@ -12,7 +12,7 @@ import { applyFilters } from '@wordpress/hooks';
 /**
  * Internal Dependencies
  */
-import { PopoverURLPicker } from '../url-picker';
+import { ToolbarURLPicker } from '../url-picker';
 
 export function SectionHeaderEdit( props ) {
 	const { attributes, setAttributes, isSelected } = props;
@@ -122,24 +122,26 @@ export function SectionHeaderEdit( props ) {
 						/>
 					</p>
 				) }
-			</header>
-			<PopoverURLPicker
-				shouldShow={ isSelected && sectionCtaShow }
-				position="top center"
-				label={ __( 'Section Header Call to Action Link', 'bm-block-library' ) }
-				opensInNewTab={ sectionCtaLinkTarget === '_blank' }
-				url={ sectionCtaLink }
-				rel={ sectionCtaLinkRel }
-				saveLinkTarget={ ( target, rel ) =>
-					setAttributes( {
-						sectionCtaLinkTarget: target,
-						sectionCtaLinkRel: rel,
-					} )
-				}
-				saveUrl={ ( url ) =>
-					setAttributes( { sectionCtaLink: url } )
-				}
-			/>
+            </header>
+            
+            { sectionCtaShow && (
+    			<ToolbarURLPicker
+                    label={ __( 'Section Header Call to Action Link') }
+                    toolbarLabel={ __( 'Section Header CTA' ) }
+    				opensInNewTab={ sectionCtaLinkTarget === '_blank' }
+    				url={ sectionCtaLink }
+    				rel={ sectionCtaLinkRel }
+    				saveLinkTarget={ ( target, rel ) =>
+    					setAttributes( {
+    						sectionCtaLinkTarget: target,
+    						sectionCtaLinkRel: rel,
+    					} )
+    				}
+    				saveUrl={ ( url ) =>
+    					setAttributes( { sectionCtaLink: url } )
+    				}
+                />
+            ) }
 		</>
 	);
 }

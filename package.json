@@ -1,6 +1,6 @@
 {
   "name": "@bernskioldmedia/wp-editor-components",
-  "version": "1.0.14",
+  "version": "1.0.15",
   "main": "build/main.js",
   "description": "Reusable block editor components for WordPress development.",
   "scripts": {
@@ -47,7 +47,7 @@
     "@babel/preset-env": "^7.12.11",
     "@babel/preset-react": "^7.12.10",
     "babel-loader": "^8.2.2",
-    "webpack": "^5.18.0",
+    "webpack": "^5.19.0",
     "webpack-cli": "^4.4.0"
   }
 }
