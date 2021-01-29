@@ -7,10 +7,6 @@ export const sectionAttributes = {
 		type: 'boolean',
 		default: true,
 	},
-	backgroundColor: {
-		type: 'string',
-		default: 'transparent',
-	},
 	backgroundImageId: {
 		type: 'number',
 	},
