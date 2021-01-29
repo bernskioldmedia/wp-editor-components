@@ -9,6 +9,7 @@ import { RichText } from '@wordpress/block-editor';
 
 export function SectionHeaderSave( { attributes } ) {
 	const {
+        sectionWrapperEnabled,
 		sectionHeaderStyle,
 		sectionHeaderShow,
 		sectionEyebrow,
@@ -21,6 +22,10 @@ export function SectionHeaderSave( { attributes } ) {
 		sectionCtaLinkRel,
 	} = attributes;
 
+    if ( ! sectionWrapperEnabled ) {
+		return null;
+	}
+    
 	/**
 	 * If the Section header is hidden (by default it is),
 	 * then just don't show it.

@@ -17,6 +17,7 @@ export function SectionFooterEdit( props ) {
 	const { attributes, setAttributes, isSelected } = props;
 
 	const {
+        sectionWrapperEnabled,
 		sectionFooterShow,
 		sectionFooterAlignment,
 		sectionFooterText,
@@ -25,7 +26,11 @@ export function SectionFooterEdit( props ) {
 		sectionFooterCtaLink,
 		sectionFooterCtaLinkTarget,
 		sectionFooterCtaLinkRel,
-	} = attributes;
+    } = attributes;
+    
+    if ( ! sectionWrapperEnabled ) {
+		return null;
+	}
 
 	if ( ! sectionFooterShow ) {
 		return null;
@@ -39,7 +44,6 @@ export function SectionFooterEdit( props ) {
 		<>
 			<footer className={ classes }>
 				<div className="section-footer-content">
-					{ sectionFooterText && (
 						<RichText
 							tagName="p"
 							className="section-footer-text"
@@ -51,7 +55,6 @@ export function SectionFooterEdit( props ) {
 								} )
 							}
 						/>
-					) }
 
 					{ sectionFooterCtaShow && (
 						<div className="section-footer-cta">

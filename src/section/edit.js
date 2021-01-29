@@ -29,46 +29,51 @@ export function SectionEdit( props ) {
 		sectionContentWidth,
 		sectionVerticalSpacing,
 		sectionTitle,
-	} = attributes;
+    } = attributes;
+    
+    const propsArgs = {};
+    
+    if(sectionWrapperEnabled) {
 
-	/**
-	 * Get the image styles and apply to the main
-	 * Section, conditional on us having a Figure.
-	 */
-	const getStyles = () => {
-		const styles = {};
+        /**
+    	 * Get the image styles and apply to the main
+    	 * Section, conditional on us having a Figure.
+    	 */
+    	const getStyles = () => {
+    		const styles = {};
 
-		if ( backgroundImageUrl ) {
-			styles.backgroundImage = `url('${ backgroundImageUrl }')`;
-			styles.backgroundPosition = focalPointToBgPos(
-				backgroundImageFocalPoint
-			);
-		}
+    		if ( backgroundImageUrl ) {
+    			styles.backgroundImage = `url('${ backgroundImageUrl }')`;
+    			styles.backgroundPosition = focalPointToBgPos(
+    				backgroundImageFocalPoint
+    			);
+    		}
 
-		return styles;
-	};
+    		return styles;
+        };
 
+        propsArgs.style = getStyles();
+        propsArgs.className = classnames( 'section', {
+    		[`section-${ className }`]: className,
+    		'has-background-image bg-cover': backgroundImageUrl,
+    		'is-full-height': true === isSectionFullHeight,
+    		'has-carousel': true === displayAsCarousel,
+    		'has-header': true === sectionHeaderShow,
+    		'has-footer': true === sectionFooterShow,
+    		[`has-${ sectionContentWidth }-content`]: sectionContentWidth,
+    		[`has-${ sectionVerticalSpacing }-vspacing`]: sectionVerticalSpacing,
+        } );
+        
+    }
 
-	const classes = classnames( 'section', {
-		[`section-${ className }`]: className,
-		'has-background-image bg-cover': backgroundImageUrl,
-		'is-full-height': true === isSectionFullHeight,
-		'has-carousel': true === displayAsCarousel,
-		'has-header': true === sectionHeaderShow,
-		'has-footer': true === sectionFooterShow,
-		[`has-${ sectionContentWidth }-content`]: sectionContentWidth,
-		[`has-${ sectionVerticalSpacing }-vspacing`]: sectionVerticalSpacing,
-	} );
-
-	const blockProps = useBlockProps( {
-		className: classes,
-		style: getStyles(),
-    } );
+	const blockProps = useBlockProps( propsArgs );
     
     // If wrapper is disabled, just render the children.
     if ( ! sectionWrapperEnabled ) {
         return (
-            { children }
+            <div {...blockProps}>
+                { children }
+            </div>
         );
     }
 

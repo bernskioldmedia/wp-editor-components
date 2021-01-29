@@ -18,6 +18,7 @@ export function SectionHeaderEdit( props ) {
 	const { attributes, setAttributes, isSelected } = props;
 
 	const {
+        sectionWrapperEnabled,
 		sectionHeaderStyle,
 		sectionHeaderShow,
 		sectionEyebrow,
@@ -28,7 +29,11 @@ export function SectionHeaderEdit( props ) {
 		sectionCtaLink,
 		sectionCtaLinkTarget,
 		sectionCtaLinkRel,
-	} = attributes;
+    } = attributes;
+    
+    if ( ! sectionWrapperEnabled ) {
+		return null;
+	}
 
 	if ( ! sectionHeaderShow ) {
 		return null;

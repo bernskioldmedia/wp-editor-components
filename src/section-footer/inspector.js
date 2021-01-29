@@ -23,10 +23,16 @@ const DEFAULT_ALIGNMENT_OPTIONS = [
 export function SectionFooterInspector( props ) {
 	const { attributes, setAttributes } = props;
 	const {
+        sectionWrapperEnabled,
 		sectionFooterShow,
 		sectionFooterAlignment,
 		sectionFooterCtaShow,
-	} = attributes;
+    } = attributes;
+    
+    if ( ! sectionWrapperEnabled ) {
+		return null;
+	}
+    
 	return (
 		<PanelBody
 			title={ __( 'Section Footer', 'bm-block-library' ) }

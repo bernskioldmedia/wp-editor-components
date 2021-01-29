@@ -9,6 +9,7 @@ import { RichText } from '@wordpress/block-editor';
 
 export function SectionFooterSave( { attributes } ) {
 	const {
+        sectionWrapperEnabled,
 		sectionFooterShow,
 		sectionFooterAlignment,
 		sectionFooterText,
@@ -17,7 +18,11 @@ export function SectionFooterSave( { attributes } ) {
 		sectionFooterCtaText,
 		sectionFooterCtaLinkTarget,
 		sectionFooterCtaLinkRel,
-	} = attributes;
+    } = attributes;
+    
+    if ( ! sectionWrapperEnabled ) {
+		return null;
+	}
 
 	if ( ! sectionFooterShow ) {
 		return null;

@@ -24,10 +24,15 @@ export function SectionHeaderInspector( props ) {
 	const { attributes, setAttributes } = props;
 
 	const {
+        sectionWrapperEnabled,
 		sectionHeaderShow,
 		sectionHeaderStyle,
 		sectionCtaShow,
-	} = attributes;
+    } = attributes;
+    
+    if ( ! sectionWrapperEnabled ) {
+		return null;
+	}
 
 	return (
 		<PanelBody

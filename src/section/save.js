@@ -24,36 +24,37 @@ export function SectionSave( { attributes, children } ) {
 		sectionContentWidth,
 		sectionVerticalSpacing,
 		sectionTitle,
-	} = attributes;
+    } = attributes;
+    
+    const propsArgs = {};
 
-	const classes = classnames( 'section', {
-		'has-background-image bg-cover': backgroundImageUrl,
-		'is-full-height': true === isSectionFullHeight,
-		'has-carousel': true === displayAsCarousel,
-		'has-header': true === sectionHeaderShow,
-		'has-footer': true === sectionFooterShow,
-		[`has-${ sectionContentWidth }-content`]: sectionContentWidth,
-		[`has-${ sectionVerticalSpacing }-vspacing`]: sectionVerticalSpacing,
-	} );
+    if( sectionWrapperEnabled ) {
+        propsArgs.className = classnames( 'section', {
+    		'has-background-image bg-cover': backgroundImageUrl,
+    		'is-full-height': true === isSectionFullHeight,
+    		'has-carousel': true === displayAsCarousel,
+    		'has-header': true === sectionHeaderShow,
+    		'has-footer': true === sectionFooterShow,
+    		[`has-${ sectionContentWidth }-content`]: sectionContentWidth,
+    		[`has-${ sectionVerticalSpacing }-vspacing`]: sectionVerticalSpacing,
+        } );
+        
+        if ( backgroundImageUrl ) {
+            propsArgs.styles.backgroundImage = `url('${ backgroundImageUrl }')`;
+            propsArgs.styles.backgroundPosition = focalPointToBgPos(
+    			backgroundImageFocalPoint
+    		);
+    	}
+    }
 
-	const styles = {};
-
-	if ( backgroundImageUrl ) {
-		styles.backgroundImage = `url('${ backgroundImageUrl }')`;
-		styles.backgroundPosition = focalPointToBgPos(
-			backgroundImageFocalPoint
-		);
-	}
-
-	const blockProps = useBlockProps.save( {
-		className: classes,
-		style: styles,
-    } );
+	const blockProps = useBlockProps.save( propsArgs );
     
     // If wrapper is disabled, just render the children.
     if ( ! sectionWrapperEnabled ) {
         return (
-            { children }
+            <div {...blockProps}>
+                { children }
+            </div>
         );
     }
 
