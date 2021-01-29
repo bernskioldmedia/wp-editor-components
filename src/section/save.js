@@ -14,6 +14,7 @@ import { useBlockProps } from '@wordpress/block-editor';
 
 export function SectionSave( { attributes, children } ) {
 	const {
+        sectionWrapperEnabled,
 		backgroundImageUrl,
 		backgroundImageFocalPoint,
 		isSectionFullHeight,
@@ -47,7 +48,14 @@ export function SectionSave( { attributes, children } ) {
 	const blockProps = useBlockProps.save( {
 		className: classes,
 		style: styles,
-	} );
+    } );
+    
+    // If wrapper is disabled, just render the children.
+    if ( ! sectionWrapperEnabled ) {
+        return (
+            { children }
+        );
+    }
 
 	return (
 		<section

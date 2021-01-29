@@ -19,6 +19,7 @@ export function SectionEdit( props ) {
 	} = props;
 
 	const {
+        sectionWrapperEnabled,
 		backgroundImageUrl,
 		backgroundImageFocalPoint,
 		isSectionFullHeight,
@@ -62,7 +63,14 @@ export function SectionEdit( props ) {
 	const blockProps = useBlockProps( {
 		className: classes,
 		style: getStyles(),
-	} );
+    } );
+    
+    // If wrapper is disabled, just render the children.
+    if ( ! sectionWrapperEnabled ) {
+        return (
+            { children }
+        );
+    }
 
 	return (
 		<>

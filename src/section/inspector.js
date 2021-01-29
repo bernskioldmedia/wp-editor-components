@@ -32,7 +32,14 @@ export function SectionAppearance( props ) {
 	} = attributes;
 
 	return (
-		<>
+        <>
+            <PanelBody>
+				<ToggleControl
+					label={ __( 'Section Wrapper Disabled' ) }
+					checked={ ! attributes.sectionWrapperEnabled }
+					onChange={ ( value ) => setAttributes( { sectionWrapperEnabled: ! value } ) }
+				/>
+			</PanelBody>
 			<PanelBody
 				title={ __( 'Size & Spacing', 'bm-block-library' ) }
 				initialOpen={ false }

@@ -3,6 +3,10 @@
  * N.B. Don't forget to update these in Components/Section/class-Section.php too!
  */
 export const sectionAttributes = {
+    sectionWrapperEnabled: {
+		type: 'boolean',
+		default: true,
+	},
 	backgroundColor: {
 		type: 'string',
 		default: 'transparent',
