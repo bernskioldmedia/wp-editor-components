@@ -11,12 +11,21 @@ import { SectionHeaderEdit, SectionHeaderInspector, SectionHeaderSave } from '..
  */
 export const withSectionEdit = createHigherOrderComponent( ( BlockEdit ) => {
 	return ( props ) => {
+        const { attributes } = props;
+        const { sectionWrapperEnabled } = attributes;
+
 		return (
 			<SectionEdit { ...props }>
-				<SectionHeaderEdit { ...props } />
-				<div className="section-body">
-					<BlockEdit { ...props } />
-				</div>
+                <SectionHeaderEdit { ...props } />
+                
+                { sectionWrapperEnabled ? (
+                    <div className="section-body">
+					    <BlockEdit { ...props } />
+				    </div>
+                ) : (
+                    <BlockEdit { ...props } />
+                )}
+
 				<SectionFooterEdit { ...props } />
 
 				<InspectorControls>
@@ -35,12 +44,21 @@ export const withSectionEdit = createHigherOrderComponent( ( BlockEdit ) => {
  */
 export const withSectionSave = createHigherOrderComponent( ( BlockSave ) => {
 	return ( props ) => {
+        const { attributes } = props;
+        const { sectionWrapperEnabled } = attributes;
+
 		return (
 			<SectionSave { ...props }>
-				<SectionHeaderSave { ...props } />
-				<div className="section-body">
-					<BlockSave { ...props } />
-				</div>
+                <SectionHeaderSave { ...props } />
+                
+                { sectionWrapperEnabled ? (
+                    <div className="section-body">
+					    <BlockSave { ...props } />
+				    </div>
+                ) : (
+                    <BlockSave { ...props } />
+                )}
+
 				<SectionFooterSave { ...props } />
 			</SectionSave>
 		);
