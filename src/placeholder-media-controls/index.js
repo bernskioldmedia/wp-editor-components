@@ -53,8 +53,9 @@ export function PlaceholderMediaControls( props ) {
 						'position': 'absolute',
 						'background-color': '#fff',
 						'top': '1rem',
-						left: '1rem',
+						'left': '1rem',
 						'border-radius': '4px',
+                        'z-index': '100',
 					} }>
 						<Button onClick={ open } icon="edit" label={ __( 'Edit Media', 'bm-block-library' ) } />
 						<Button onClick={ removeMedia } icon="no" label={ __( 'Remove Media', 'bm-block-library' ) } />
