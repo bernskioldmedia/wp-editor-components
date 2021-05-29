@@ -38,10 +38,11 @@ export function SectionSave( { attributes, children } ) {
     		[`has-${ sectionContentWidth }-content`]: sectionContentWidth,
     		[`has-${ sectionVerticalSpacing }-vspacing`]: sectionVerticalSpacing,
         } );
-        
+
         if ( backgroundImageUrl ) {
-            propsArgs.styles.backgroundImage = `url('${ backgroundImageUrl }')`;
-            propsArgs.styles.backgroundPosition = focalPointToBgPos(
+            propsArgs.style = {};
+            propsArgs.style.backgroundImage = `url('${ backgroundImageUrl }')`;
+            propsArgs.style.backgroundPosition = focalPointToBgPos(
     			backgroundImageFocalPoint
     		);
     	}
