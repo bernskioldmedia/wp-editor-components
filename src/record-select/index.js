@@ -1,86 +1,75 @@
-/**
- * External Dependencies
- */
-import Select from 'react-select';
-
-/**
- * WordPress Dependencies
- */
+import { FormTokenField } from '@wordpress/components';
+import { store as coreStore } from '@wordpress/core-data';
 import { useSelect } from '@wordpress/data';
+import { useState } from '@wordpress/element';
 
-export function RecordSelector( {
-	onChange,
-	value,
-	multiple,
-	placeholder,
-    type = 'postType',
-    objectType = 'post'
-} ) {
+const MAX_FETCHED_TERMS = -1;
 
-    const { isResolving, records } = useSelect( ( select ) => {
-        const { getEntityRecords } = select('core');
-        const { isResolving } = select('core/data');
-        const query = {
-            per_page: -1,
-        };
-        const _records = getEntityRecords( type, objectType, query );
+export default function RecordSelect( props ) {
 
-        return {
-            isResolving: isResolving('core', 'getEntityRecords', [ type, objectType, query ]),
-            records: _records,
-        };
-    } );
-    
-	/**
-	 * Map the API records to an objects array
-	 * that react-select will take.
-	 *
-	 * It supports taxonomies and CPTs.
-	 *
-	 * @return {Array}
-	 */
-	const getOptions = () => {
-		const options = [];
+	const {
+		label,
+		value,
+		onChange,
+		type = 'postType',
+		objectType,
+		query = { per_page: MAX_FETCHED_TERMS },
+		placeholder = '',
+	} = props;
 
-		if ( ! isResolving ) {
-			/**
-			 * Map CPT type records.
-			 */
-			if ( 'postType' === type ) {
-				records && records.map( ( record ) => {
-					const option = {
-						label: record.title.rendered,
-						value: record.id,
-					};
-					options.push( option );
-				} );
-			} else if ( 'taxonomy' === type ) {
-				/**
-				 * Map Taxonomy Type Records
-				 */
+	const [ search, setSearch ] = useState( '' );
 
-				records && records.map( ( record ) => {
-					const option = {
-						label: record.name,
-						value: record.id,
-					};
-					options.push( option );
-				} );
-			}
+	// Get the posts or terms from WP.
+	const foundObjects = useSelect( ( select ) => {
+		const { getEntityRecords } = select( coreStore );
+		// query.search = search; @todo
+		const _objects = getEntityRecords( type, objectType, query );
+
+		if ( ! _objects ) {
+			return [];
 		}
 
-		return options;
+		return _objects.map( ( item ) => {
+			return {
+				value: item.id,
+				label: type === 'postType' ? item.title.raw : item.name,
+			};
+		} );
+	}, [ search ] );
+
+
+	const mapStoredValuesToFormTokenField = ( values ) => {
+		if ( ! values ) {
+			return [];
+		}
+
+		return values.map( ( item ) => item.label );
+	};
+
+	const onValueSelect = ( names ) => {
+		const objects = names.map( ( name ) => {
+			const object = foundObjects.filter( ( item ) => {
+				return item.label === name;
+			} );
+
+			if ( object.length < 1 ) {
+				return null;
+			}
+
+			return object[0];
+		} ).filter( ( item ) => item !== null );
+
+		onChange( objects );
 	};
 
 	return (
-		<Select
-			options={ getOptions() }
-			onChange={ onChange }
-			className="record-selector-control"
-			value={ value }
-			isDisabled={ isResolving }
-			isMulti={ multiple }
+		<FormTokenField
+			label={ label }
 			placeholder={ placeholder }
+			value={ mapStoredValuesToFormTokenField( value ) }
+			suggestions={ foundObjects.map( ( item ) => item.label ) }
+			onChange={ onValueSelect }
+			__experimentalExpandOnFocus={ true }
 		/>
 	);
 }

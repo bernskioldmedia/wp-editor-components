@@ -1,6 +1,6 @@
 {
   "name": "@bernskioldmedia/wp-editor-components",
-  "version": "1.0.21",
+  "version": "1.1.0",
   "main": "build/main.js",
   "description": "Reusable block editor components for WordPress development.",
   "scripts": {
@@ -34,13 +34,13 @@
     "@wordpress/blocks": "^9.1.0",
     "@wordpress/components": "^14.1.0",
     "@wordpress/compose": "^4.1.0",
+    "@wordpress/core-data": "^3.1.1",
     "@wordpress/data": "^5.1.0",
     "@wordpress/element": "^3.1.0",
     "@wordpress/eslint-plugin": "^9.0.5",
     "@wordpress/hooks": "^3.1.0",
     "@wordpress/i18n": "^4.1.0",
-    "classnames": "^2.3",
-    "react-select": "^4.3.1"
+    "classnames": "^2.3"
   },
   "devDependencies": {
     "@babel/core": "^7.14.3",
