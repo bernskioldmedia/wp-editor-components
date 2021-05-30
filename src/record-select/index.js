@@ -5,7 +5,7 @@ import { useState } from '@wordpress/element';
 
 const MAX_FETCHED_TERMS = -1;
 
-export default function RecordSelect( props ) {
+export function RecordSelect( props ) {
 
 	const {
 		label,

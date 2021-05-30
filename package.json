@@ -1,6 +1,6 @@
 {
   "name": "@bernskioldmedia/wp-editor-components",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "main": "build/main.js",
   "description": "Reusable block editor components for WordPress development.",
   "scripts": {
