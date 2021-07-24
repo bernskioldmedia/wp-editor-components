@@ -12,57 +12,57 @@ import { InspectorControls } from '@wordpress/block-editor';
 
 const ANIMATION_TYPES = [
 	{
-		label: __( 'Fade ----' ),
+		label: __( 'Fade ----', 'TEXTDOMAIN' ),
 		value: null,
 		disabled: true,
 	},
 	{
-		label: __( 'Fade In' ),
+		label: __( 'Fade In', 'TEXTDOMAIN' ),
 		value: 'fade-in',
 	},
 	{
-		label: __( 'Fade Up' ),
+		label: __( 'Fade Up', 'TEXTDOMAIN' ),
 		value: 'fade-up',
 	},
 	{
-		label: __( 'Fade Down' ),
+		label: __( 'Fade Down', 'TEXTDOMAIN' ),
 		value: 'fade-down',
 	},
 	{
-		label: __( 'Fade to Right' ),
+		label: __( 'Fade to Right', 'TEXTDOMAIN' ),
 		value: 'fade-right',
 	},
 	{
-		label: __( 'Fade to Left' ),
+		label: __( 'Fade to Left', 'TEXTDOMAIN' ),
 		value: 'fade-left',
 	},
 	{
-		label: __( 'Zoom ----' ),
+		label: __( 'Zoom ----', 'TEXTDOMAIN' ),
 		value: null,
 		disabled: true,
 	},
 	{
-		label: __( 'Zoom In' ),
+		label: __( 'Zoom In', 'TEXTDOMAIN' ),
 		value: 'zoom-in',
 	},
 	{
-		label: __( 'Zoom In to Left' ),
+		label: __( 'Zoom In to Left', 'TEXTDOMAIN' ),
 		value: 'zoom-in-left',
 	},
 	{
-		label: __( 'Zoom In to Right' ),
+		label: __( 'Zoom In to Right', 'TEXTDOMAIN' ),
 		value: 'zoom-in-right',
 	},
 	{
-		label: __( 'Zoom Out' ),
+		label: __( 'Zoom Out', 'TEXTDOMAIN' ),
 		value: 'zoom-out',
 	},
 	{
-		label: __( 'Zoom Out to Left' ),
+		label: __( 'Zoom Out to Left', 'TEXTDOMAIN' ),
 		value: 'zoom-out-left',
 	},
 	{
-		label: __( 'Zoom Out to Right' ),
+		label: __( 'Zoom Out to Right', 'TEXTDOMAIN' ),
 		value: 'zoom-out-right',
 	},
 ];
@@ -79,13 +79,13 @@ export function AnimationInspector( props ) {
 	return (
 		<InspectorControls>
 			<PanelBody
-				title={ __( 'Animation', 'bm-block-library' ) }
+				title={ animationEnabled ? __( 'Animation: On', 'TEXTDOMAIN' ) : __( 'Animation: Off', 'TEXTDOMAIN' ) }
 				initialOpen={ animationEnabled }
 			>
 				<ToggleControl
-					label={ __( 'Enable Animation?' ) }
+					label={ __( 'Enable Animation?', 'TEXTDOMAIN' ) }
 					help={ __(
-						'Allows the block to animate on the page. For the best great experience, use this as special effects with some caution.'
+						'Allows the block to animate on the page. For the best great experience, use this as special effects with some caution.', 'TEXTDOMAIN'
 					) }
 					checked={ animationEnabled }
 					onChange={ ( animationEnabled ) =>
@@ -96,7 +96,7 @@ export function AnimationInspector( props ) {
 				{ animationEnabled && (
 					<>
 						<SelectControl
-							label={ __( 'Type', 'bm-block-library' ) }
+							label={ __( 'Type', 'TEXTDOMAIN' ) }
 							value={ animationType }
 							onChange={ ( animationType ) =>
 								setAttributes( { animationType } )
@@ -105,7 +105,7 @@ export function AnimationInspector( props ) {
 						/>
 
 						<RangeControl
-							label={ __( 'Duration', 'bm-block-library' ) }
+							label={ __( 'Duration', 'TEXTDOMAIN' ) }
 							value={ animationDuration }
 							onChange={ ( animationDuration ) =>
 								setAttributes( { animationDuration } )
@@ -118,12 +118,12 @@ export function AnimationInspector( props ) {
 							initialPosition={ 1000 }
 							help={ __(
 								'How long will the animation take? Set in milliseconds.',
-								'bm-block-library'
+								'TEXTDOMAIN'
 							) }
 						/>
 
 						<RangeControl
-							label={ __( 'Delay', 'bm-block-library' ) }
+							label={ __( 'Delay', 'TEXTDOMAIN' ) }
 							value={ animationDelay }
 							onChange={ ( animationDelay ) =>
 								setAttributes( { animationDelay } )
@@ -136,7 +136,7 @@ export function AnimationInspector( props ) {
 							initialPosition={ 0 }
 							help={ __(
 								'Wait this long before running the animation. Set in milliseconds.',
-								'bm-block-library'
+								'TEXTDOMAIN'
 							) }
 						/>
 					</>
