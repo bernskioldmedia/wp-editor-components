@@ -4,21 +4,21 @@ import { AnimationInspector } from './animation-inspector';
 export * from './animation-inspector';
 
 export const animationAttributes = {
-	animationEnabled: {
-		type: 'bool',
-		default: false,
+	"animationEnabled": {
+		"type": "bool",
+		"default": false,
 	},
-	animationType: {
-		type: 'string',
-		default: 'fade-in',
+	"animationType": {
+		"type": "string",
+		"default": "fade-in",
 	},
-	animationDuration: {
-		type: 'number',
-		default: 1000,
+	"animationDuration": {
+		"type": "number",
+		"default": 1000,
 	},
-	animationDelay: {
-		type: 'number',
-		default: 0,
+	"animationDelay": {
+		"type": "number",
+		"default": 0,
 	},
 };
 
