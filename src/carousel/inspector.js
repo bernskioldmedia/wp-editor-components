@@ -12,7 +12,7 @@ export function CarouselInspectorPanel( {
 
 	return (
 		<PanelBody
-			title={ displayAsCarousel ? __( 'Carousel: On' ) : __( 'Carousel: Off', 'TEXTDOMAIN' ) }
+			title={ displayAsCarousel ? __( 'Carousel: On', 'TEXTDOMAIN' ) : __( 'Carousel: Off', 'TEXTDOMAIN' ) }
 			initialOpen={ false }
 		>
 			<ToggleControl

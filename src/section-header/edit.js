@@ -126,8 +126,8 @@ export function SectionHeaderEdit( props ) {
             
             { sectionCtaShow && (
     			<ToolbarURLPicker
-                    label={ __( 'Section Header Call to Action Link') }
-                    toolbarLabel={ __( 'Section Header CTA' ) }
+                    label={ __( 'Section Header Call to Action Link', 'TEXTDOMAIN') }
+                    toolbarLabel={ __( 'Section Header CTA', 'TEXTDOMAIN' ) }
     				opensInNewTab={ sectionCtaLinkTarget === '_blank' }
     				url={ sectionCtaLink }
     				rel={ sectionCtaLinkRel }

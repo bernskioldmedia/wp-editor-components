@@ -7,15 +7,15 @@ import { applyFilters } from '@wordpress/hooks';
 
 const DEFAULT_ALIGNMENT_OPTIONS = [
 	{
-		label: __( 'Left', 'bm-block-library' ),
+		label: __( 'Left', 'TEXTDOMAIN' ),
 		value: 'left',
 	},
 	{
-		label: __( 'Center', 'bm-block-library' ),
+		label: __( 'Center', 'TEXTDOMAIN' ),
 		value: 'center',
 	},
 	{
-		label: __( 'Right', 'bm-block-library' ),
+		label: __( 'Right', 'TEXTDOMAIN' ),
 		value: 'right',
 	},
 ];
@@ -35,11 +35,11 @@ export function SectionFooterInspector( props ) {
     
 	return (
 		<PanelBody
-			title={ __( 'Section Footer', 'bm-block-library' ) }
+			title={ __( 'Section Footer', 'TEXTDOMAIN' ) }
 			initialOpen={ false }
 		>
 			<ToggleControl
-				label={ __( 'Show Section Footer', 'bm-block-library' ) }
+				label={ __( 'Show Section Footer', 'TEXTDOMAIN' ) }
 				checked={ sectionFooterShow }
 				onChange={ ( value ) =>
 					setAttributes( { sectionFooterShow: value } )
@@ -49,7 +49,7 @@ export function SectionFooterInspector( props ) {
 			{ sectionFooterShow && (
 				<>
 					<SelectControl
-						label={ __( 'Alignment', 'bm-block-library' ) }
+						label={ __( 'Alignment', 'TEXTDOMAIN' ) }
 						value={ sectionFooterAlignment }
 						onChange={ ( value ) =>
 							setAttributes( {
@@ -65,7 +65,7 @@ export function SectionFooterInspector( props ) {
 					<ToggleControl
 						label={ __(
 							'Show Call to Action Button',
-							'bm-block-library'
+							'TEXTDOMAIN'
 						) }
 						checked={ sectionFooterCtaShow }
 						onChange={ ( value ) =>

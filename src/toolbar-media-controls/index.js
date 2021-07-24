@@ -20,7 +20,7 @@ export function ToolbarMediaControls( props ) {
 			return (
 				<Button
 					className="components-toolbar__control"
-					label={ __( 'Select/Upload Media', 'bm-block-library' ) }
+					label={ __( 'Select/Upload Media', 'TEXTDOMAIN' ) }
 					icon="admin-media"
 					onClick={ open }
 				/>
@@ -31,13 +31,13 @@ export function ToolbarMediaControls( props ) {
 			<>
 				<Button
 					className="components-toolbar__control"
-					label={ __( 'Edit Media', 'bm-block-library' ) }
+					label={ __( 'Edit Media', 'TEXTDOMAIN' ) }
 					icon="edit"
 					onClick={ open }
 				/>
 				<Button
 					className="components-toolbar__control"
-					label={ __( 'Remove Media', 'bm-block-library' ) }
+					label={ __( 'Remove Media', 'TEXTDOMAIN' ) }
 					icon="no"
 					onClick={ removeMedia }
 				/>

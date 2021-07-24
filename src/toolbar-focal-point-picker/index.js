@@ -29,7 +29,7 @@ export function ToolbarFocalPointPicker( props ) {
 						<Button
 							label={__(
 								'Select Focal Point',
-								'bm-block-library'
+								'TEXTDOMAIN'
 							)}
 							icon="visibility"
 							onClick={onToggle}
@@ -40,7 +40,7 @@ export function ToolbarFocalPointPicker( props ) {
 						<BaseControl
 							label={__(
 								'Select Focal Point',
-								'bm-block-library'
+								'TEXTDOMAIN'
 							)}
 						>
 							<div style={{ padding: '1rem' }}>

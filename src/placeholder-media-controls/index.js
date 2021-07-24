@@ -31,7 +31,7 @@ export function PlaceholderMediaControls( props ) {
 						instructions={ instructions }
 					>
 						<Button icon="admin-media" isSecondary onClick={ open }>
-							{ __( 'Select/Upload Media', 'bm-block-library' ) }
+							{ __( 'Select/Upload Media', 'TEXTDOMAIN' ) }
 						</Button>
 					</Placeholder>
 				</figure>
@@ -57,8 +57,8 @@ export function PlaceholderMediaControls( props ) {
 						'border-radius': '4px',
                         'z-index': '100',
 					} }>
-						<Button onClick={ open } icon="edit" label={ __( 'Edit Media', 'bm-block-library' ) } />
-						<Button onClick={ removeMedia } icon="no" label={ __( 'Remove Media', 'bm-block-library' ) } />
+						<Button onClick={ open } icon="edit" label={ __( 'Edit Media', 'TEXTDOMAIN' ) } />
+						<Button onClick={ removeMedia } icon="no" label={ __( 'Remove Media', 'TEXTDOMAIN' ) } />
 					</div>
 				</Figure>
 

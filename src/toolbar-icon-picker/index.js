@@ -25,7 +25,7 @@ export function ToolbarIconPicker( props ) {
 					position="bottom center"
 					renderToggle={ ( { isOpen, onToggle } ) => (
 						<Button
-							label={ __( 'Select Icon', 'bm-block-library' ) }
+							label={ __( 'Select Icon', 'TEXTDOMAIN' ) }
 							icon={ icon }
 							onClick={ onToggle }
 							aria-expanded={ isOpen }
@@ -43,11 +43,11 @@ export function ToolbarIconPicker( props ) {
 								<RadioControl
 									label={ __(
 										'Icon Style Family',
-										'bm-block-library'
+										'TEXTDOMAIN'
 									) }
 									help={ __(
 										'Choose which Font Awesome family the icon should be loaded from.',
-										'bm-block-library'
+										'TEXTDOMAIN'
 									) }
 									selected={ selectedFamily }
 									options={ fontAwesomeFamilyOptions }
@@ -56,7 +56,7 @@ export function ToolbarIconPicker( props ) {
 								<TextControl
 									label={ __(
 										'Icon Name',
-										'bm-block-library'
+										'TEXTDOMAIN'
 									) }
 									value={ selectedIcon }
 									onChange={ setIcon }

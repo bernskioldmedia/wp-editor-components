@@ -78,7 +78,7 @@ export function PopoverURLPicker( props ) {
 }
 
 export function ToolbarURLPicker( props ) {
-	const { isSelected, label, toolbarLabel = __( 'Link' ), icon = linkIcon } = props;
+	const { isSelected, label, toolbarLabel = __( 'Link', 'TEXTDOMAIN' ), icon = linkIcon } = props;
 
 	const [ isURLPickerOpen, setIsURLPickerOpen ] = useState( false );
 

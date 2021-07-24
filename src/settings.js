@@ -8,19 +8,19 @@ import { applyFilters } from '@wordpress/hooks';
  */
 const FONT_AWESOME_FAMILY_OPTIONS = [
 	{
-		label: __( 'Regular', 'bm-block-library' ),
+		label: __( 'Regular', 'TEXTDOMAIN' ),
 		value: 'far',
 	},
 	{
-		label: __( 'Solid', 'bm-block-library' ),
+		label: __( 'Solid', 'TEXTDOMAIN' ),
 		value: 'fas',
 	},
 	{
-		label: __( 'Duotone', 'bm-block-library' ),
+		label: __( 'Duotone', 'TEXTDOMAIN' ),
 		value: 'fad',
 	},
 	{
-		label: __( 'Brands', 'bm-block-library' ),
+		label: __( 'Brands', 'TEXTDOMAIN' ),
 		value: 'fab',
 	},
 ];

@@ -76,8 +76,8 @@ export function SectionFooterEdit( props ) {
 				</div>
 			</footer>
 			<ToolbarURLPicker
-                label={ __( 'Section Footer Call to Action Link' ) }
-                toolbarLabel={ __( 'Section Footer CTA' ) }
+                label={ __( 'Section Footer Call to Action Link', 'TEXTDOMAIN' ) }
+                toolbarLabel={ __( 'Section Footer CTA', 'TEXTDOMAIN' ) }
 				opensInNewTab={
 					sectionFooterCtaLinkTarget === '_blank'
 				}
