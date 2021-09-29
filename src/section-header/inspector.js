@@ -29,7 +29,7 @@ export function SectionHeaderInspector( props ) {
 		sectionHeaderStyle,
 		sectionCtaShow,
     } = attributes;
-    
+
     if ( ! sectionWrapperEnabled ) {
 		return null;
 	}
@@ -58,7 +58,8 @@ export function SectionHeaderInspector( props ) {
 							} )
 						}
 						options={ applyFilters(
-							'bmBlockLibrary.sectionHeader.styles',
+							'sectionHeader.styles',
+                            'bmEditor',
 							DEFAULT_HEADER_STYLES,
 							props
 						) }

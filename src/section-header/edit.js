@@ -30,7 +30,7 @@ export function SectionHeaderEdit( props ) {
 		sectionCtaLinkTarget,
 		sectionCtaLinkRel,
     } = attributes;
-    
+
     if ( ! sectionWrapperEnabled ) {
 		return null;
 	}
@@ -40,12 +40,14 @@ export function SectionHeaderEdit( props ) {
 	}
 
 	const showEyebrow = applyFilters(
-		'bmBlockLibrary.sectionHeader.showEyebrow',
+		'sectionHeader.showEyebrow',
+        'bmEditor',
 		'small' !== sectionHeaderStyle,
 		props
 	);
 	const showSubtitle = applyFilters(
-		'bmBlockLibrary.sectionHeader.showSubtitle',
+		'sectionHeader.showSubtitle',
+        'bmEditor',
 		'small' !== sectionHeaderStyle,
 		props
 	);
@@ -123,7 +125,7 @@ export function SectionHeaderEdit( props ) {
 					</p>
 				) }
             </header>
-            
+
             { sectionCtaShow && (
     			<ToolbarURLPicker
                     label={ __( 'Section Header Call to Action Link', 'TEXTDOMAIN') }
