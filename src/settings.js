@@ -27,7 +27,7 @@ const FONT_AWESOME_FAMILY_OPTIONS = [
 
 export function getDefaultFontAwesomeFamilies( props ) {
 	return applyFilters(
-		'bmBlockLibrary.fontAwesomeFamilies',
+		'bmEditor.settings.fontAwesomeFamilies',
 		FONT_AWESOME_FAMILY_OPTIONS,
 		props
 	);

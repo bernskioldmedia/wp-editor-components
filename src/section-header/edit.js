@@ -40,14 +40,12 @@ export function SectionHeaderEdit( props ) {
 	}
 
 	const showEyebrow = applyFilters(
-		'sectionHeader.showEyebrow',
-        'bmEditor',
+		'bmEditor.sectionHeader.showEyebrow',
 		'small' !== sectionHeaderStyle,
 		props
 	);
 	const showSubtitle = applyFilters(
-		'sectionHeader.showSubtitle',
-        'bmEditor',
+		'bmEditor.sectionHeader.showSubtitle',
 		'small' !== sectionHeaderStyle,
 		props
 	);

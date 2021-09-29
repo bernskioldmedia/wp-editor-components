@@ -28,11 +28,11 @@ export function SectionFooterInspector( props ) {
 		sectionFooterAlignment,
 		sectionFooterCtaShow,
     } = attributes;
-    
+
     if ( ! sectionWrapperEnabled ) {
 		return null;
 	}
-    
+
 	return (
 		<PanelBody
 			title={ __( 'Section Footer', 'TEXTDOMAIN' ) }
@@ -57,7 +57,7 @@ export function SectionFooterInspector( props ) {
 							} )
 						}
 						options={ applyFilters(
-							'bmBlockLibrary.sectionFooter.alignmentOptions',
+							'bmEditor.sectionFooter.alignmentOptions',
 							DEFAULT_ALIGNMENT_OPTIONS,
 							props
 						) }

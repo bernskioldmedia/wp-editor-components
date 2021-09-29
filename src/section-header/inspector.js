@@ -58,8 +58,7 @@ export function SectionHeaderInspector( props ) {
 							} )
 						}
 						options={ applyFilters(
-							'sectionHeader.styles',
-                            'bmEditor',
+							'bmEditor.sectionHeader.styles',
 							DEFAULT_HEADER_STYLES,
 							props
 						) }
