@@ -6,25 +6,22 @@ module.exports = {
     output: {
         path: path.resolve(__dirname, "build"),
         filename: 'index.js',
-        libraryTarget: 'commonjs2'
+        library: ['bm', 'wpEditorComponents']
     },
     externals: {
-		lodash: 'lodash',
-		jquery: 'jquery',
-		react: 'react',
-        'classnames': 'classnames',
-		'react-dom': 'react-dom',
-		'@wordpress/api-fetch': '@wordpress/api-fetch',
-		'@wordpress/block-editor': '@wordpress/block-editor',
-		'@wordpress/blocks': '@wordpress/blocks',
-		'@wordpress/components': '@wordpress/components',
-		'@wordpress/compose': '@wordpress/compose',
-        '@wordpress/core-data': '@wordpress/core-data',
-		'@wordpress/data': '@wordpress/data',
-		'@wordpress/element': '@wordpress/element',
-		'@wordpress/hooks': '@wordpress/hooks',
-		'@wordpress/i18n': '@wordpress/i18n',
+        'lodash': 'lodash',
+		'@wordpress/api-fetch': ['wp', 'apiFetch'],
+		'@wordpress/block-editor': ['wp', 'blockEditor'],
+		'@wordpress/blocks': ['wp', 'blocks'],
+		'@wordpress/components': ['wp', 'components'],
+		'@wordpress/compose': ['wp', 'compose'],
+        '@wordpress/core-data': ['wp', 'coreData'],
+		'@wordpress/data': ['wp', 'data'],
+		'@wordpress/element': ['wp','element'],
+		'@wordpress/hooks': ['wp','hooks'],
+		'@wordpress/i18n': ['wp','i18n'],
 	},
+    externalsType: 'window',
     module: {
         rules: [
           {
