@@ -67,6 +67,7 @@ export function Figure( props ) {
 					autoPlay
 					muted
 					loop
+					playsInline
 					preload="none"
 					style={ mediaStyle }
 				>
