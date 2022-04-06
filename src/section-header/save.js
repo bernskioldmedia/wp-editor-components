@@ -8,7 +8,8 @@ import classnames from 'classnames';
 import { RichText } from '@wordpress/block-editor';
 import { applyFilters } from '@wordpress/hooks';
 
-export function SectionHeaderSave( { attributes } ) {
+export function SectionHeaderSave( props ) {
+	const { attributes } = props;
 	const {
         sectionWrapperEnabled,
 		sectionHeaderStyle,
