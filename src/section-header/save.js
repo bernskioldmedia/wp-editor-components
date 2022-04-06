@@ -6,6 +6,7 @@ import classnames from 'classnames';
  * WordPress Dependencies
  */
 import { RichText } from '@wordpress/block-editor';
+import { applyFilters } from '@wordpress/hooks';
 
 export function SectionHeaderSave( { attributes } ) {
 	const {
@@ -33,6 +34,17 @@ export function SectionHeaderSave( { attributes } ) {
 	if ( ! sectionHeaderShow ) {
 		return null;
 	}
+	
+	const showEyebrow = applyFilters(
+		'bmEditor.sectionHeader.showEyebrow',
+		'small' !== sectionHeaderStyle,
+		props
+	);
+	const showSubtitle = applyFilters(
+		'bmEditor.sectionHeader.showSubtitle',
+		'small' !== sectionHeaderStyle,
+		props
+	);
 
 	const classes = classnames( 'section-header', {
 		[ `is-style-${ sectionHeaderStyle }` ]: sectionHeaderStyle,
@@ -41,7 +53,7 @@ export function SectionHeaderSave( { attributes } ) {
 	return (
 		<header className={ classes }>
 			<div className="section-header-content">
-				{ sectionEyebrow && (
+				{ showEyebrow && (
 					<RichText.Content
 						tagName="p"
 						className="section-eyebrow"
@@ -57,7 +69,7 @@ export function SectionHeaderSave( { attributes } ) {
 					/>
 				) }
 
-				{ sectionSubtitle && (
+				{ showSubtitle && (
 					<RichText.Content
 						tagName="p"
 						className="section-subtitle"
